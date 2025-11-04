@@ -9,6 +9,7 @@ module.exports = async (req, res) => {
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   );
+  res.setHeader('Access-Control-Max-Age', '86400'); // Cache preflight for 1 day - reduces browser requests
   
   // Handle OPTIONS request (preflight)
   if (req.method === 'OPTIONS') {
